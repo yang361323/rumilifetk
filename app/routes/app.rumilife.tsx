@@ -1,32 +1,35 @@
 import { useState } from "react";
 
 const totalSales = [
-    { month: "2026-01", volume: "122981", revenue: "943791.01" },
-    { month: "2025-12", volume: "323935", revenue: "2497961.99" },
-    { month: "2025-11", volume: "187949", revenue: "1351501.1" },
-    { month: "2025-10", volume: "164827", revenue: "1126331.96" },
-    { month: "2025-09", volume: "163781", revenue: "1149657.08" },
-    { month: "2025-08", volume: "192361", revenue: "1416268.56" },
-    { month: "2025-07", volume: "175160", revenue: "1353061.44" },
-    { month: "2025-06", volume: "149499", revenue: "1130003.54" },
-    { month: "2025-05", volume: "164373", revenue: "1193978.44" },
-    { month: "2025-04", volume: "155191", revenue: "1101058.06" },
-    { month: "2025-03", volume: "152291", revenue: "1108794.45" },
-    { month: "2025-02", volume: "132651", revenue: "1052772.07" },
-    { month: "2025-01", volume: "20294", revenue: "142178.79" },
+    { month: "2025-12", volume: "323935", revenue: "2747961.99" },
+    { month: "2025-11", volume: "187949", revenue: "1601501.1" },
+    { month: "2025-10", volume: "164827", revenue: "1376331.96" },
+    { month: "2025-09", volume: "163781", revenue: "1399657.08" },
+    { month: "2025-08", volume: "192361", revenue: "1666268.56" },
+    { month: "2025-07", volume: "175160", revenue: "1603061.44" },
+    { month: "2025-06", volume: "149499", revenue: "1380003.54" },
+    { month: "2025-05", volume: "164373", revenue: "1443978.44" },
+    { month: "2025-04", volume: "155191", revenue: "1351058.06" },
+    { month: "2025-03", volume: "152291", revenue: "1358794.45" },
+    { month: "2025-02", volume: "132651", revenue: "1402772.07" },
+    { month: "2025-01", volume: "143275", revenue: "1435969.8" },
 ];
 
 export default function RumilifePage() {
 
-  // const [totalSalesVolume, setTotalSalesVolume] = useState(0);
-  // setTotalSalesVolume(totalSales.reduce((acc, curr) => acc + parseInt(curr.volume), 0));
+  function sumVolume() {
+    return totalSales.reduce((acc, cur) => acc + parseInt(cur.volume), 0).toFixed(2);
+  }
+  function sumRevenue() {
+    return totalSales.reduce((acc, cur) => acc + parseFloat(cur.revenue), 0).toFixed(2);
+  }
 
   return (
     <s-page heading="Rumilife">
       <s-section>
         <s-grid gridTemplateColumns="repeat(4, 1fr)">
-          <s-date-field defaultView="2025-01" defaultValue="2025-01-26" />
-          <s-date-field defaultView="2026-01" defaultValue="2026-01-25" />
+          <s-date-field defaultView="2025-01" defaultValue="2025-01-01" />
+          <s-date-field defaultView="2025-12" defaultValue="2026-12-31" />
         </s-grid>
       </s-section>
 
@@ -37,14 +40,19 @@ export default function RumilifePage() {
           gap="small"
           justifyContent="center"
         >
-          {/* <s-box border="base" borderRadius="base" background="transparent" overflow="hidden"> */}
-            <s-section heading="Sales Volume">2105300</s-section>
-          {/* </s-box> */}
-          {/* <s-box border="base" borderRadius="base" background="transparent" overflow="hidden"> */}
-            <s-section heading="Sales Revenue">16187358.49</s-section>
-          {/* </s-box> */}
+            <s-section heading="Sales Volume">{sumVolume()}</s-section>
+            <s-section heading="Sales Revenue">{sumRevenue()}</s-section>
         </s-grid>
       </s-section>
+
+      {/* charts */}
+      {/* <s-grid gridTemplateColumns="repeat(2, 1fr)" gap="small" justifyContent="center">
+        <s-section heading="Sales Volume">
+        </s-section>
+        <s-section>
+
+        </s-section>
+      </s-grid> */}
 
       {/* table content */}
       <s-section heading="">
