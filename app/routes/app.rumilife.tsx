@@ -29,7 +29,7 @@ export default function RumilifePage() {
       <s-section>
         <s-grid gridTemplateColumns="repeat(4, 1fr)">
           <s-date-field defaultView="2025-01" defaultValue="2025-01-01" />
-          <s-date-field defaultView="2025-12" defaultValue="2026-12-31" />
+          <s-date-field defaultView="2025-12" defaultValue="2025-12-31" />
         </s-grid>
       </s-section>
 
