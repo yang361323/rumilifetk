@@ -1,6 +1,5 @@
 import { Line, LineChart, XAxis, YAxis } from "recharts";
-import ReactECharts from "echarts-for-react";
-// import { useEffect, useRef } from "react";
+// import ReactECharts from "echarts-for-react";
 
 type ToTalSale = {
   month: string;
@@ -38,19 +37,13 @@ export default function RumilifePage() {
       }, 0)
       .toFixed(2);
   }
-  // const chartRef = useRef(null)
-  const option = {
-    title: { text: "销量统计" },
-    xAxis: { type: "category", data: ["衬衫", "羊毛衫", "雪纺衫"] },
-    yAxis: {},
-    series: [{ data: [5, 20, 36], type: "bar" }],
-  };
-  // useEffect(() => {
-  //   window.addEventListener("resize", () => { 
-  //     console.log("123")
-  //     console.log(chartRef.current)
-  //   });
-  // }, [])
+
+  // const option = {
+  //   title: { text: "销量统计" },
+  //   xAxis: { type: "category", data: ["衬衫", "羊毛衫", "雪纺衫"] },
+  //   yAxis: {},
+  //   series: [{ data: [5, 20, 36], type: "bar" }],
+  // };
 
   return (
     <s-page heading="Rumilife">
@@ -108,7 +101,7 @@ export default function RumilifePage() {
         </s-grid-item>
         {/* <s-grid-item> */}
           <s-section>
-            <ReactECharts option={option} style={{ height: '100%', width: "100%" }} />
+            {/* <ReactECharts option={option} style={{ height: '100%', width: "100%" }} /> */}
           </s-section>
         {/* </s-grid-item> */}
       </s-grid>
