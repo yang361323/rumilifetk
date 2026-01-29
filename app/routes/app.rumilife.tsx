@@ -63,7 +63,7 @@ export default function RumilifePage() {
           justifyContent="center"
         >
           <s-section heading="Sales Volume">{sumTotal("volume")}</s-section>
-          <s-section heading="Sales Revenue">${sumTotal("revenue")}</s-section>
+          <s-section heading="Sales Revenue">$ {sumTotal("revenue")}</s-section>
           <s-section heading="Order Volume">{sumTotal("order")}</s-section>
         </s-grid>
       </s-section>
@@ -135,7 +135,7 @@ export default function RumilifePage() {
               >
                 <s-table-cell>{sale.month}</s-table-cell>
                 <s-table-cell>{sale.volume}</s-table-cell>
-                <s-table-cell>${sale.revenue}</s-table-cell>
+                <s-table-cell>$ {sale.revenue}</s-table-cell>
                 <s-table-cell>{sale.order}</s-table-cell>
               </s-table-row>
             ))}
