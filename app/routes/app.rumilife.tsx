@@ -1,5 +1,13 @@
-import { Line, LineChart, XAxis, YAxis } from "recharts";
-// import ReactECharts from "echarts-for-react";
+import {
+  Bar,
+  BarChart,
+  Label,
+  Line,
+  LineChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 type ToTalSale = {
   month: string;
@@ -37,13 +45,6 @@ export default function RumilifePage() {
       }, 0)
       .toFixed(2);
   }
-
-  // const option = {
-  //   title: { text: "销量统计" },
-  //   xAxis: { type: "category", data: ["衬衫", "羊毛衫", "雪纺衫"] },
-  //   yAxis: {},
-  //   series: [{ data: [5, 20, 36], type: "bar" }],
-  // };
 
   return (
     <s-page heading="Rumilife">
@@ -85,25 +86,35 @@ export default function RumilifePage() {
               responsive
               data={totalSales}
             >
-              <XAxis
-                dataKey="month"
-                style={{ fontSize: "0.6rem" }}
-                label={{ offset: -10 }}
-              />
-              <YAxis
-                width="auto"
-                style={{ fontSize: "0.6rem" }}
-                label={{ offset: -1000 }}
-              />
+              <XAxis dataKey="month" style={{ fontSize: "0.6rem" }} />
+              <YAxis width="auto" style={{ fontSize: "0.6rem" }} />
+              <Tooltip />
               <Line type="monotone" dataKey="volume" stroke="#13ACF0" />
             </LineChart>
           </s-section>
         </s-grid-item>
-        {/* <s-grid-item> */}
-          <s-section>
-            {/* <ReactECharts option={option} style={{ height: '100%', width: "100%" }} /> */}
+        <s-grid-item gridColumn="span 2">
+          <s-section heading="Sales Revenue">
+            <BarChart
+              style={{ width: "100%", aspectRatio: 1.618, margin: "auto" }}
+              responsive
+              data={totalSales}
+            >
+              <XAxis dataKey="month" style={{ fontSize: "0.6rem" }} />
+
+              <YAxis width="auto" style={{ fontSize: "0.6rem" }} />
+              <Bar
+                type="monotone"
+                dataKey="revenue"
+                stroke="#13ACF0"
+                fill="#13ACF0"
+              />
+              {/* <Bar type="monotone" dataKey="revenue" stroke="#29f013" fill="#29f013" /> */}
+              <Tooltip />
+              <Label />
+            </BarChart>
           </s-section>
-        {/* </s-grid-item> */}
+        </s-grid-item>
       </s-grid>
 
       {/* table content */}
