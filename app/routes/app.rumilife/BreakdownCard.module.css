@@ -1,0 +1,53 @@
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.infoButton {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.label {
+  font-size: 14px;
+  color: #333;
+}
+
+.value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}

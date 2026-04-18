@@ -1,0 +1,223 @@
+/* =========================================
+   1. 容器与触发器
+   ========================================= */
+
+.r-date-range-field {
+  position: relative;
+  width: 100%;
+  max-width: 240px; /* Shopify 标准输入框宽度 */
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+.trigger-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px; /* 更紧凑 */
+  background-color: #fff;
+  border: 1px solid #d2d5d9;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease-in-out, border-color 0.1s ease-in-out;
+  color: #202223;
+  /* font-size: 13px;  */
+  line-height: 1.5;
+  min-height: 34px;
+  box-sizing: border-box;
+}
+
+.trigger-input:hover {
+  border-color: #babfc3;
+}
+
+.trigger-input.focused {
+  border-color: #008060;
+  box-shadow: 0 0 0 1px #008060;
+}
+
+.trigger-input.disabled {
+  background-color: #f6f6f7;
+  color: #999da2;
+  cursor: not-allowed;
+}
+
+.input-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 8px;
+  flex: 1;
+  color: #202223;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: #6d7175;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   2. 弹窗主体 (Popover)
+   ========================================= */
+
+.popover {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #d2d5d9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  width: 380px; /* 固定宽度，适应侧边栏+日历 */
+  overflow: hidden;
+}
+
+.popover-content {
+  display: flex;
+  width: 100%;
+}
+
+/* 左侧快捷菜单 */
+.quick-menu {
+  width: 100px;
+  padding: 8px;
+  border-right: 1px solid #e1e3e5;
+  background-color: #f6f6f7; /* Polaris 浅灰背景 */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.quick-btn {
+  display: block;
+  width: 100%;
+  padding: 6px 8px;
+  border: none;
+  background: transparent;
+  color: #202223;
+  /* font-size: 13px; */
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.1s;
+}
+
+.quick-btn:hover {
+  background-color: #e3e5e7;
+}
+
+/* 右侧日历包装器 */
+.calendar-wrapper {
+  flex: 1;
+  padding: 12px;
+  background: #fff;
+}
+
+/* =========================================
+   3. 日历头部
+   ========================================= */
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #202223;
+  /* font-size: 14px; */
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #6d7175;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-header button:hover {
+  background-color: #f6f6f7;
+  color: #202223;
+}
+
+/* =========================================
+   4. 日历网格
+   ========================================= */
+
+.calendar-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.week-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+}
+
+.week-day {
+  text-align: center;
+  /* font-size: 12px; */
+  color: #6d7175;
+  padding: 4px 0;
+  font-weight: 500;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.day-empty {
+  height: 32px;
+}
+
+.day {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 13px; */
+  cursor: pointer;
+  border-radius: 4px;
+  color: #202223;
+  transition: background-color 0.1s;
+  position: relative;
+}
+
+.day:hover:not(.start):not(.end):not(.in-range) {
+  background-color: #f6f6f7;
+}
+
+/* 范围背景 */
+.in-range {
+  background-color: #e3f3f1 !important; /* Polaris 浅绿 */
+  border-radius: 0;
+  color: #202223;
+}
+
+/* 开始和结束节点 */
+.start, .end {
+  background-color: #008060 !important; /* Polaris 绿 */
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* 如果开始和结束相邻，修正圆角 */
+.start.next-to-end, .end.next-to-start {
+  border-radius: 4px;
+}
+
+.single-day {
+  border-radius: 4px;
+}

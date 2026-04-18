@@ -45,14 +45,16 @@ module.exports = {
           { name: "NavLink", linkAttribute: "to" },
         ],
         "import/resolver": {
-          typescript: {},
+          typescript: {
+            alwaysTryTypes: true,
+            project: "tsconfig.json",
+          },
         },
       },
       rules: {
         "react/no-unknown-property": ["error", { ignore: ["variant"] }],
       },
     },
-
     // Typescript
     {
       files: ["**/*.{ts,tsx}"],
@@ -68,6 +70,9 @@ module.exports = {
             alwaysTryTypes: true,
           },
         },
+      },
+      rules: {
+        'react/prop-types': 'off'
       },
       extends: [
         "plugin:@typescript-eslint/recommended",

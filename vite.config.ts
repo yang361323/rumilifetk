@@ -1,4 +1,5 @@
 import { reactRouter } from "@react-router/dev/vite";
+import path from "path";
 import { defineConfig, type UserConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
@@ -46,6 +47,11 @@ export default defineConfig({
     fs: {
       // See https://vitejs.dev/config/server-options.html#server-fs-allow for more information
       allow: ["app", "node_modules"],
+    },
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./app"),
     },
   },
   plugins: [

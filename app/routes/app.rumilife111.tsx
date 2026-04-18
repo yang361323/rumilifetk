@@ -20,7 +20,7 @@ const totalSales: ToTalSale[] = [
   {
     month: "2025-12",
     volume: "323935",
-    revenue: "2747961.99",
+    revenue: "111111.99",
     order: "100827",
   },
   { month: "2025-11", volume: "187949", revenue: "1601501.1", order: "62690" },
@@ -133,7 +133,9 @@ export default function RumilifePage() {
                 key={sale.month}
                 clickDelegate="mountain-view-checkbox"
               >
-                <s-table-cell>{sale.month}</s-table-cell>
+                <s-table-cell>
+                  <span className="month-cell">{sale.month}</span>
+                </s-table-cell>
                 <s-table-cell>{sale.volume}</s-table-cell>
                 <s-table-cell>$ {sale.revenue}</s-table-cell>
                 <s-table-cell>{sale.order}</s-table-cell>

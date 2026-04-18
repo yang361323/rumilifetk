@@ -1,0 +1,63 @@
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.trend {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.trend.up {
+  color: #28a745;
+}
+
+.trend.down {
+  color: #dc3545;
+}
+
+.trend.neutral {
+  color: #6c757d;
+}
+
+.progress {
+  height: 4px;
+  background-color: #e9ecef;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressLine {
+  height: 100%;
+  background-color: #007bff;
+  width: 50%; /* 示例宽度 */
+}
