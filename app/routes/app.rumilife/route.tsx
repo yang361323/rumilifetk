@@ -87,7 +87,7 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
-      <RDateRangeField startDate="2025-01-01" endDate="2025-12-31" style={{marginBottom: '10px'}} />
+      <RDateRangeField startDate="2025-08-01" endDate="2026-07-31" style={{marginBottom: '10px'}} />
 
       {/* 第一行：四个卡片 */}
       <div className="row row-1">
