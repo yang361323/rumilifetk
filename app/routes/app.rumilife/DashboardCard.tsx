@@ -21,7 +21,7 @@ export default function DashboardCard({
   unit = "",
 }: DashboardCardProps) {
   return (
-    <div className="card">
+    <div className="col card">
       <div className="left">
         <p className="title">{title}</p>
         <p className="value">{value}</p>
