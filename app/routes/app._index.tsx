@@ -24,16 +24,16 @@ export default function Index() {
         <s-paragraph>
           <s-text>Business Name: </s-text>
           <s-link href="https://rumilifeshop.com/" target="_blank">
-            RUMI ONLINE INC.
+            义乌市坤晗贸易有限公司.
           </s-link>
         </s-paragraph>
         <s-paragraph>
           <s-text>Business Address: </s-text>
           <s-link href="https://rumilifeshop.com/" target="_blank">
-            686 Grand AVE Richfield, NJ 07657
+            浙江省金华市义乌市佛堂镇培德路45号C1一楼
           </s-link>
         </s-paragraph>
-        <s-paragraph>
+        {/* <s-paragraph>
           <s-text>Tax: </s-text>
           <s-link
             href="http://www.nj.gov/treasury/taxation/prntsale.shtml"
@@ -41,7 +41,7 @@ export default function Index() {
           >
             N.J. State Sales Tax
           </s-link>
-        </s-paragraph>
+        </s-paragraph> */}
       </s-section>
 
       <s-section>
